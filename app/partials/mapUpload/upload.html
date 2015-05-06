@@ -32,13 +32,18 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-4 col-xs-offset-1">
+        <div class="col-xs-4">
             <button type="button" class="btn btn-success btn-block" ng-click="uploader.uploadAll()"
                     ng-disabled="!uploader.getNotUploadedItems().length">
                 <span class="glyphicon glyphicon-upload"></span> Upload GPX
             </button>
         </div>
-        <div class="col-xs-2"></div>
+        <div class="col-xs-4">
+            <button type="button" class="btn btn-warning btn-block" ng-click="uploader.clearQueue()"
+                    ng-disabled="!uploader.getNotUploadedItems().length">
+                <span class="glyphicon glyphicon-remove"></span> Cancel upload
+            </button>
+        </div>
         <div class="col-xs-4">
             <button type="button" class="btn btn-danger btn-block" ng-click="deleteMarkers()"
                     ng-disabled="!loadedMap()">
