@@ -14,6 +14,12 @@ angular.module('gpx').controller('UploadCtrl', function ($scope, $state, FileUpl
     $scope.deleteMarkers = function () {
         markerStorage.removeMarkers();
     }
+    $scope.cancel = function () {
+        if(uploader.isUploading){
+            uploader.cancelAll();
+        }
+        uploader.clearQueue();
+    }
 
     uploader.onWhenAddingFileFailed = function (item, filter, options) {
         //console.info('onWhenAddingFileFailed', item, filter, options);

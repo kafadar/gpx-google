@@ -10,16 +10,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-10 col-md-offset-1">
             <div nv-file-drop="" uploader="uploader">
                 <div nv-file-over="" uploader="uploader" over-class="another-file-over-class" class="well my-drop-zone">
                     <span ng-hide="!!uploader.queue[0]">Drop your GPX file here</span>
                     <span ng-show="!!uploader.queue[0]">{{uploader.queue[0].file.name}}</span>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="file_upload">Or select file<input type="file" nv-file-select="" uploader="uploader"/></div>
         </div>
     </div>
     <div class="container topMargin">
@@ -39,7 +36,7 @@
             </button>
         </div>
         <div class="col-xs-4">
-            <button type="button" class="btn btn-warning btn-block" ng-click="uploader.clearQueue()"
+            <button type="button" class="btn btn-warning btn-block" ng-click="cancel()"
                     ng-disabled="!uploader.getNotUploadedItems().length">
                 <span class="glyphicon glyphicon-remove"></span> Cancel upload
             </button>
