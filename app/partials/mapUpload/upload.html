@@ -13,7 +13,8 @@
         <div class="col-md-8">
             <div nv-file-drop="" uploader="uploader">
                 <div nv-file-over="" uploader="uploader" over-class="another-file-over-class" class="well my-drop-zone">
-                    Drop your GPX file here
+                    <span ng-hide="!!uploader.queue[0]">Drop your GPX file here</span>
+                    <span ng-show="!!uploader.queue[0]">{{uploader.queue[0].file.name}}</span>
                 </div>
             </div>
         </div>
