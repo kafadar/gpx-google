@@ -1,0 +1,19 @@
+{
+  "name": "gpxViewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.3",
+    "fs": "0.0.2",
+    "jade": "^1.9.2",
+    "multer": "^0.1.8",
+    "xml2js": "^0.4.8",
+    "bower": "^1.3.12"
+  }
+}

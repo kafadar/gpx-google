@@ -1,0 +1,49 @@
+<div class="container space" ng-controller="UploadCtrl" uploader="uploader">
+    <div class="row col-md-12">
+        <div class="alert alert-dismissible alert-info" ng-show="loadedMap()">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>File uploaded: {{fileName}}</strong>
+        </div>
+        <div class="alert alert-dismissible alert-warning" ng-show="!!error">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>Error: {{error}}</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div nv-file-drop="" uploader="uploader">
+                <div nv-file-over="" uploader="uploader" over-class="another-file-over-class" class="well my-drop-zone">
+                    Drop your GPX file here
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="file_upload">Or select file<input type="file" nv-file-select="" uploader="uploader"/></div>
+        </div>
+    </div>
+    <div class="container topMargin">
+    </div>
+    <div class="row container">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"
+                 style="width: 0%;"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">
+            <button type="button" class="btn btn-success btn-block" ng-click="uploader.uploadAll()"
+                    ng-disabled="!uploader.getNotUploadedItems().length">
+                <span class="glyphicon glyphicon-upload"></span> Upload GPX
+            </button>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+            <button type="button" class="btn btn-danger btn-block" ng-click="deleteMarkers()"
+                    ng-disabled="!loadedMap()">
+                <span class="glyphicon glyphicon-delete"></span> Delete
+            </button>
+        </div>
+    </div>
+
+</div>

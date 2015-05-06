@@ -1,0 +1,44 @@
+doctype html
+html(ng-app='gpx')
+    head
+        meta(charset='utf-8')
+        title GPX VIEWER
+        link(rel='stylesheet', href='assets/bower_components/bootswatch-dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='assets/css/style.css')
+    body
+        nav.navbar.navbar-fixed-top.navbar-inverse
+            .container
+                .navbar-header
+                    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#gpx-collapse')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(ui-sref='home') GPXViewer
+                #gpx-collapse.collapse.navbar-collapse
+                    ul.nav.navbar-nav
+                        li(ui-sref-active='active')
+                            a(ui-sref='upload') Upload
+                        li(ui-sref-active='active')
+                            a(ui-sref='map') Map
+
+        .ui-view-container
+            ui-view
+
+        script(src='//maps.googleapis.com/maps/api/js?sensor=false')
+        script(src='assets/bower_components/jquery/dist/jquery.min.js')
+        script(src='assets/bower_components/bootswatch-dist/js/bootstrap.min.js')
+        // angular
+        script(src='assets/bower_components/angular/angular.min.js')
+        script(src='assets/bower_components/angular-ui-router/release/angular-ui-router.min.js')
+        script(src='assets/bower_components/angular-local-storage/dist/angular-local-storage.min.js')
+        // angular file upload files
+        script(src='assets/bower_components/angular-file-upload/angular-file-upload.min.js')
+        script(src='assets/bower_components/es5-shim/es5-sham.min.js')
+        // angular appConfig
+        script(src='config/app.js')
+        script(src='config/app.config.js')
+        // angular scripts
+        script(src='partials/mapView/mapCtrl.js')
+        script(src='partials/mapUpload/uploadCtrl.js')
+        script(src='partials/local/markerStorage.js')
