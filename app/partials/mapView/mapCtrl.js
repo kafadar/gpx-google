@@ -9,6 +9,9 @@ angular.module('gpx').controller('MapCtrl', function ($scope, markerStorage) {
     $scope.loadMap = function () {
         var mapOptions = {
             zoom: 8,
+            disableDefaultUI: true,
+            mapTypeId: google.maps.MapTypeId.TERRAIN,
+            scaleControl: true,
             center: new google.maps.LatLng(50.43, 12.3)
         };
         $scope.map = new google.maps.Map(mapContainer, mapOptions);
